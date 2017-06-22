@@ -1,0 +1,21 @@
+//package meetup.crate.data;
+
+//@Slf4j
+//@Component
+//public class DataProvider {
+//
+//    // No connection pool - for demo purposes only :)
+//    private Connection connection;
+//
+//    DataProvider(@Value("${crate.psql.port}") int port,
+//                 @Value("${crate.host}") String host
+//    ) throws SQLException {
+//        try {
+//            this.connection = DriverManager.getConnection(
+//                    String.format(Locale.ENGLISH, "jdbc:crate://%s:%d/", host, port)
+//            );
+//        } catch (SQLException e) {
+//            log.error("Cannot connect to the database", e);
+//        }
+//    }
+//}
