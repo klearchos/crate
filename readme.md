@@ -1,4 +1,4 @@
-## Spring Boot application inserting data from a raspberry pi to a CrateDB 
+## Spring Boot application inserting data from a raspberry pi to CrateDB 
 
 This project has been used for demonstration purposes during a Java meetup at Thessaloniki (https://www.meetup.com/Thessaloniki-Java-Meetup-Group/events/240809028/)
 
@@ -12,8 +12,7 @@ Under a real environment there would be a load balancer in front of the applicat
 directly with a CrateDB.
 
 ### Raspberry pi
-I have been based on this sample from AdaFruit (https://github
-.com/adafruit/Adafruit_Python_DHT/blob/master/examples/AdafruitDHT
+I have been based on this sample from AdaFruit (https://github.com/adafruit/Adafruit_Python_DHT/blob/master/examples/AdafruitDHT
 .py) in order to send the data rom the sensors to the spring boot application. The code can be found under the 
 crate/client folder.
 
