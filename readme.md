@@ -1,4 +1,4 @@
-#Spring Boot and ![Image of CrateDB](https://crate.io/wp-content/themes/webflow/images/logo-crate.png)
+# Spring Boot and ![Image of CrateDB](https://crate.io/wp-content/themes/webflow/images/logo-crate.png)
 
 
 ## Spring Boot application inserting data from a raspberry pi to CrateDB 
