@@ -20,6 +20,10 @@ public class Event {
     private String sensorName;
 
     @NotNull
-    private Float sensorValue;
+    private Float sensorTempValue;
+
+    @NotNull
+    private Float sensorHumidityValue;
+
     private Date created;
 }

@@ -32,7 +32,7 @@ public class EventController {
             this.eventRepository.insert(event);
         } catch (SQLException exc) {
             log.error("Database error", exc);
-            new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(HttpStatus.CREATED);
     }

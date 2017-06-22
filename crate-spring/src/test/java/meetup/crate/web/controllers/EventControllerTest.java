@@ -62,7 +62,7 @@ public class EventControllerTest {
 
         for (int i = 0; i < 1000; i++) {
             mockMvc.perform(post("/event/create/")
-                    .content(this.json(new Event(null, "name_" + i, new Float(10 + i), null)))
+                    .content(this.json(new Event(null, "name_" + i, new Float(10 + i), new Float(90 + i), null)))
                     .contentType(contentType))
                     .andExpect(status().isCreated());
         }
