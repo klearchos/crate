@@ -1,0 +1,45 @@
+version: '3'
+services:
+  crate01:
+    image: crate/crate:1.1.5
+    command: crate -Cgateway.expected_nodes=3 -Cgateway.recover_after_nodes=2 -Cdiscovery.zen.minimum_master_nodes=2 -Ccluster.name=JMGT -Cnode.name=crate01 -Chttp.cors.enabled=true -Chttp.cors.allow-origin="http://localhost:32768"
+    ports:
+      - "4201:4200"
+      - "5432:5432"
+    expose:
+      - "4200"
+      - "4300"
+    networks:
+      - crate
+  crate02:
+    image: crate/crate:1.1.5
+    command: crate -Cdiscovery.zen.ping.unicast.hosts=crate01 -Cgateway.expected_nodes=3 -Cgateway.recover_after_nodes=2 -Cdiscovery.zen.minimum_master_nodes=2 -Ccluster.name=JMGT -Cnode.name=crate02
+    ports:
+      - "4202:4200"
+      - "5433:5432"
+    expose:
+      - "4202"
+      - "5433"
+    networks:
+      - crate
+  crate03:
+    image: crate/crate:1.1.5
+    command: crate -Cdiscovery.zen.ping.unicast.hosts=crate01,crate02 -Cgateway.expected_nodes=3 -Cgateway.recover_after_nodes=2 -Cdiscovery.zen.minimum_master_nodes=2 -Ccluster.name=JMGT -Cnode.name=crate03
+    ports:
+      - "4203:4200"
+      - "5434:5432"
+    expose:
+      - "4203"
+      - "5434"
+    networks:
+      - crate
+  grafana:
+    image: grafana/grafana:4.3.2
+    ports:
+      - "32768:3000"
+    expose:
+      - "32768"
+    networks:
+      - crate
+networks:
+  crate:
